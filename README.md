@@ -18,3 +18,15 @@ graph LR
     Frontend --> Backend
     Backend --> Database
     Backend -.-> AI_Logic[AI Engine - Not sure about this yet]
+
+    ### 🗄️ Database Schema Design (Initial Thoughts)
+I am currently learning how to structure data for an AI app. Since AI results can be unpredictable, I'm choosing **MongoDB**. 
+
+Here is my "First Draft" of how a User's Interview session will look:
+
+- **User Collection:** `name`, `email`, `experience_level`.
+- **Interview Collection:** - `userId`: (To know who gave the interview)
+  - `video_url`: (Where the recording is stored)
+  - `ai_report`: { `behavioral_score`, `technical_gaps`, `sentiment_analysis` }
+
+*Question I am researching:* Should I store the full transcript in the same document or a different collection? (Thinking about performance!)
